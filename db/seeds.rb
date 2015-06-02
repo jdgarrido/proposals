@@ -1,0 +1,1 @@
+Proposal.create([{title: "1era Propuesta", votes: 0},{title: "2da Propuesta", votes: 0}])

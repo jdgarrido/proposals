@@ -1,0 +1,11 @@
+production:
+  adapter: sqlite3
+  database: db/proposals.sqlite3
+
+development:
+  adapter: sqlite3
+  database: db/proposals_dev.sqlite3
+
+test:
+  adapter: sqlite3
+  database: db/proposals_test.sqlite3
