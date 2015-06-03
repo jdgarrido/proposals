@@ -1,6 +1,8 @@
 production:
-  adapter: sqlite3
-  database: db/proposals.sqlite3
+  adapter: postgresql
+  database: proposals
+  pool: 5
+  timeout: 5000
 
 development:
   adapter: sqlite3

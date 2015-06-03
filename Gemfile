@@ -4,3 +4,7 @@ gem "sinatra-activerecord"
 gem "sqlite3"
 gem "rake"
 gem "thin"
+
+group :production do
+  gem 'pg'
+end
