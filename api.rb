@@ -12,9 +12,10 @@ end
 class Api < Sinatra::Base
 	before do
 		content_type :json    
-		headers 'Access-Control-Allow-Origin' => '*', 
-				'Access-Control-Allow-Methods' => ['OPTIONS', 'GET', 'PUT'],
-				'Access-Control-Allow-Headers' => 'Content-Type'
+		headers 'Access-Control-Allow-Origin' => '*',
+				'Access-Control-Allow-Methods' => 'POST, PUT, PATCH, DELETE, GET, OPTIONS',
+				'Access-Control-Request-Method' => '*',
+				'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
 	end
 
 	set :protection, false
