@@ -15,7 +15,7 @@ class Api < Sinatra::Base
 		headers 'Access-Control-Allow-Origin' => '*',
 				'Access-Control-Allow-Methods' => 'POST, PUT, PATCH, DELETE, GET, OPTIONS',
 				'Access-Control-Request-Method' => '*',
-				'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+				'Access-Control-Allow-Headers' => 'Content-Type'
 	end
 
 	set :protection, false
