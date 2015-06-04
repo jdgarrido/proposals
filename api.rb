@@ -13,9 +13,7 @@ class Api < Sinatra::Base
 	before do
 		content_type :json    
 		headers 'Access-Control-Allow-Origin' => '*',
-				'Access-Control-Allow-Methods' => ['OPTIONS', 'GET', 'POST', 'PUT', 'DELETE'],
-				'Access-Control-Request-Method' => '*',
-				'Access-Control-Allow-Headers' => 'Content-Type'
+				'Access-Control-Allow-Methods' => ['OPTIONS', 'GET', 'POST', 'PUT', 'DELETE']
 	end
 
 	set :protection, false
@@ -30,8 +28,9 @@ class Api < Sinatra::Base
 		proposal.to_json
 	end
 
-	put '/proposals/:id/add_vote' do
+	get '/proposals/:id/add_vote' do
 		proposal = Proposal.find_by_id(params[:id].to_i)
 		proposal.add_vote
+		proposal.to_json
 	end
 end
