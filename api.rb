@@ -29,8 +29,13 @@ class Api < Sinatra::Base
 	end
 
 	get '/proposals/:id/add_vote' do
+		callback = params[:callback]
 		proposal = Proposal.find_by_id(params[:id].to_i)
-		proposal.add_vote
-		proposal.to_json
+		
+		if callback
+			content_type :js
+			proposal.add_vote
+			"#{callback}(#{proposal.to_json})"
+		end
 	end
 end
